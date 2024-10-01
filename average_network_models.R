@@ -16,7 +16,7 @@ average_network_models <- function(data, LV_names, MV_names, draws = 3,
                                      starts_with(LV_names)))
     
     # Compute the correlation matrix
-    correlation_matrix <- cor(draw_cols, method = corMethod, use = "pairwise")
+    correlation_matrix <- cor(draw_cols, method = corMethod, use = "complete")
     
     # Check if the matrix is positive definite by looking at its eigenvalues
     eigenvalues <- eigen(correlation_matrix)$values
